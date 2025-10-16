@@ -29,7 +29,7 @@ class Solution(object):
     def parse_solution(self):
         args = self.args
 
-        file = args[1] if len(args) >= 2 and os.path.isfile(args[1]) else 'solution_first_oneline.txt'
+        file = args[1] if len(args) >= 2 and os.path.isfile(args[1]) else 'solution_first.txt'
         f = open(file, 'r')
         solutions = f.read().splitlines()
         f.close()
@@ -54,7 +54,7 @@ class Solution(object):
     def print_solution(self):
         args = self.args
 
-        file = args[1] if len(args) >= 2 and os.path.isfile(args[1]) else 'solution_first_oneline.txt'
+        file = args[1] if len(args) >= 2 and os.path.isfile(args[1]) else 'solution_first.txt'
         f = open(file, 'r')
         solutions = f.read().splitlines()
         f.close()
@@ -83,7 +83,7 @@ def main():
 
     print(pp)
 
-    with open('solution_first.txt', 'w') as f:
+    with open('solution_first_printed.txt', 'w') as f:
         f.write(pp)
 
     print("parsed_input: ", parsed_in)
