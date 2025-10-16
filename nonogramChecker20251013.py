@@ -1,4 +1,6 @@
 # Checks if given example and solution match each other, given a set of hints and a solution
+# to run: python3 nonogramChecker20251013.py <optional:inputfile> <optional:solutionfile>
+# output: printed 5-line solution, parsed input, parsed output, True/False solution
 
 import sys
 import os
@@ -68,7 +70,9 @@ class Solution(object):
         parsed_input = self.parse_input()
         parsed_sol = self.parse_solution()
 
-        return parsed_input == parsed_sol
+        solutions = [parsed_input[i]==parsed_sol[i] for i in range(len(parsed_input))]
+
+        return solutions
 
 
 def main():
@@ -84,7 +88,7 @@ def main():
 
     print("parsed_input: ", parsed_in)
     print("parsed_output:", parsed_out)
-    print("solution: ", solver.solution())
+    print("solutions: ", solver.solution())
 
 if __name__ == '__main__':
     main()
