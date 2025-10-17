@@ -60,10 +60,9 @@ class Solution(object):
         f.close()
 
         solutions = [solution.split(',') for solution in solutions]
-        solutions = '\n'.join('\n'.join(sol) for sol in solutions)
+        solutions = '\n\n'.join('\n'.join(sol) for sol in solutions)
 
         return solutions
-
 
     def solution(self):
 
@@ -83,7 +82,7 @@ def main():
 
     print(pp)
 
-    with open('solution_first_printed.txt', 'w') as f:
+    with open('solution_printed.txt', 'w') as f:
         f.write(pp)
 
     print("parsed_input: ", parsed_in)
